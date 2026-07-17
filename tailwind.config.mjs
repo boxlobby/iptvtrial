@@ -4,15 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: '#0A1128',
-        elevated: '#111A3A',
-        subtle: '#0E1533',
-        'border-subtle': '#1F2A55',
+        base: '#0A0F1E',
+        elevated: '#131A2E',
+        subtle: '#0F1424',
+        'border-subtle': '#1E2740',
         'text-primary': '#F5F7FA',
-        'text-muted': '#9BA6C4',
-        signal: '#00E0FF',
-        'uk-red': '#E4002B',
-        'uk-blue': '#012169',
+        'text-muted': '#8A94B0',
+        brand: {
+          DEFAULT: '#2563EB',
+          light: '#3B82F6',
+          hover: '#1D4ED8',
+        },
+        accent: '#22D3EE',
         success: '#22C55E',
       },
       fontFamily: {
@@ -23,12 +26,12 @@ export default {
         container: '1200px',
       },
       boxShadow: {
-        glow: '0 0 40px -8px rgba(0, 224, 255, 0.4)',
-        'glow-red': '0 0 40px -8px rgba(228, 0, 43, 0.35)',
+        glow: '0 0 40px -8px rgba(37, 99, 235, 0.5)',
+        'glow-lg': '0 0 60px -10px rgba(37, 99, 235, 0.55)',
       },
       backgroundImage: {
-        'grad-signal': 'linear-gradient(135deg, #00E0FF 0%, #012169 100%)',
-        'grad-uk': 'linear-gradient(135deg, #E4002B 0%, #012169 60%, #00E0FF 100%)',
+        'grad-brand': 'linear-gradient(135deg, #3B82F6 0%, #2563EB 60%, #22D3EE 100%)',
+        'grad-brand-soft': 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(34,211,238,0.10) 100%)',
       },
     },
   },

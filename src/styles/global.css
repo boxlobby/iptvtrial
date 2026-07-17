@@ -12,13 +12,14 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-base text-text-primary font-sans antialiased;
     background-image:
-      radial-gradient(1200px 600px at 10% -10%, rgba(0, 224, 255, 0.08), transparent 60%),
-      radial-gradient(900px 500px at 100% 0%, rgba(228, 0, 43, 0.06), transparent 60%);
+      radial-gradient(900px 500px at 50% -10%, rgba(37, 99, 235, 0.14), transparent 60%),
+      radial-gradient(700px 400px at 100% 20%, rgba(34, 211, 238, 0.08), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -27,34 +28,35 @@
   }
 
   ::selection {
-    background: rgba(0, 224, 255, 0.35);
+    background: rgba(37, 99, 235, 0.4);
     color: #fff;
+  }
+
+  /* Bigger tap targets on mobile */
+  button, a {
+    touch-action: manipulation;
   }
 }
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-container px-5 md:px-8;
+    @apply mx-auto w-full max-w-container px-4 sm:px-6 md:px-8;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 will-change-transform;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 min-h-[44px] will-change-transform;
   }
 
   .btn-primary {
-    @apply btn bg-signal text-base shadow-glow hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0;
+    @apply btn bg-brand text-white shadow-glow hover:bg-brand-hover hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-secondary {
-    @apply btn border border-border-subtle bg-elevated/60 text-text-primary hover:border-signal/60 hover:text-signal;
-  }
-
-  .btn-uk {
-    @apply btn bg-uk-red text-white shadow-glow-red hover:brightness-110 hover:-translate-y-0.5;
+    @apply btn border border-border-subtle bg-elevated/60 text-text-primary hover:border-brand/60 hover:text-brand-light;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-border-subtle bg-elevated/60 px-3 py-1 text-xs font-medium uppercase tracking-widest text-text-muted;
+    @apply inline-flex items-center gap-2 rounded-full border border-border-subtle bg-elevated/60 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-text-muted;
   }
 
   .card {
@@ -62,12 +64,30 @@
   }
 
   .section {
-    @apply py-20 md:py-28;
+    @apply py-16 sm:py-20 md:py-24;
   }
 
   .h-divider {
-    background: linear-gradient(90deg, transparent, #012169 20%, #E4002B 50%, #F5F7FA 80%, transparent);
+    background: linear-gradient(90deg, transparent, #1E2740 20%, #2563EB 50%, #1E2740 80%, transparent);
     height: 1px;
-    opacity: 0.5;
+    opacity: 0.7;
+  }
+
+  /* Horizontal slider primitive — CSS scroll-snap, mobile-first, no JS required */
+  .slider {
+    @apply flex gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 sm:mx-0 sm:px-0;
+    scrollbar-width: none;
+  }
+  .slider::-webkit-scrollbar { display: none; }
+  .slider > * { @apply snap-start shrink-0; }
+
+  .slider-dots {
+    @apply mt-3 flex items-center justify-center gap-1.5;
+  }
+  .slider-dots span {
+    @apply h-1.5 w-1.5 rounded-full bg-border-subtle;
+  }
+  .slider-dots span.active {
+    @apply w-6 bg-brand;
   }
 }

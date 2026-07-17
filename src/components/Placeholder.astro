@@ -1,0 +1,48 @@
+---
+// Reusable image placeholder — swap `src` for a real R2 URL later.
+import Icon from './Icon.astro';
+export interface Props {
+  label?: string;
+  src?: string;      // future R2 URL; when set, renders <img> instead of placeholder
+  alt?: string;
+  aspect?: string;   // tailwind aspect class, e.g. 'aspect-video', 'aspect-[4/3]'
+  class?: string;
+  eager?: boolean;
+  width?: number;
+  height?: number;
+}
+const {
+  label = 'Image',
+  src,
+  alt = '',
+  aspect = 'aspect-video',
+  class: className = '',
+  eager = false,
+  width,
+  height,
+} = Astro.props;
+---
+{src ? (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'sync' : 'async'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    class={`w-full h-full object-cover ${aspect} ${className}`}
+  />
+) : (
+  <div
+    class={`relative overflow-hidden rounded-xl border border-border-subtle bg-grad-brand-soft ${aspect} ${className}`}
+    role="img"
+    aria-label={alt || label}
+  >
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 text-text-muted">
+      <Icon name="image" size={28} class="text-brand-light/70" />
+      <span class="text-[11px] font-medium uppercase tracking-widest">{label}</span>
+    </div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.25),transparent_50%)]"></div>
+  </div>
+)}

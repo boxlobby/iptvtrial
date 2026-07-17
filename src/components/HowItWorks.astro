@@ -27,17 +27,17 @@ const steps = [
   <div class="container-x">
     <div class="mx-auto max-w-2xl text-center">
       <span class="eyebrow">How it works</span>
-      <h2 class="mt-4 text-3xl md:text-5xl font-bold">From order to live TV in 5 minutes</h2>
+      <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">From order to live TV in 5 minutes</h2>
     </div>
 
-    <ol class="mt-14 grid gap-5 md:grid-cols-3">
+    <ol class="slider mt-10 md:mt-14 md:grid md:grid-cols-3 md:gap-5">
       {steps.map((s) => (
-        <li class="card p-6 relative">
-          <span class="absolute right-6 top-6 font-display text-4xl font-bold text-signal/20">{s.n}</span>
-          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-signal/10 text-signal">
+        <li class="card p-6 relative w-[85%] sm:w-[55%] md:w-auto">
+          <span class="absolute right-5 top-5 font-display text-3xl sm:text-4xl font-bold text-brand/25">{s.n}</span>
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand-light">
             <Icon name={s.icon} size={22} />
           </div>
-          <h3 class="text-lg font-semibold">{s.title}</h3>
+          <h3 class="text-base sm:text-lg font-semibold">{s.title}</h3>
           <p class="mt-2 text-sm text-text-muted leading-relaxed">{s.body}</p>
         </li>
       ))}

@@ -2,16 +2,17 @@
 import Icon from './Icon.astro';
 import { categories } from '../data/categories';
 ---
-<section class="py-12 bg-subtle/40" aria-label="Content categories">
+<section class="py-10 sm:py-12 bg-subtle/50" aria-label="Content categories">
   <div class="container-x">
-    <p class="text-center text-xs font-medium uppercase tracking-widest text-text-muted mb-6">
+    <p class="text-center text-[11px] font-medium uppercase tracking-widest text-text-muted mb-5">
       Everything you already watch — in one place
     </p>
-    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+
+    <ul class="slider md:grid md:grid-cols-5 md:gap-3">
       {categories.map((c) => (
-        <li class="card flex items-center gap-3 px-4 py-3 text-sm text-text-muted hover:text-text-primary hover:border-signal/40 transition">
-          <Icon name={c.icon} class="text-signal shrink-0" size={20} />
-          <span>{c.label}</span>
+        <li class="card flex items-center gap-2.5 px-4 py-3 text-sm text-text-muted hover:text-text-primary hover:border-brand/40 transition w-[45%] sm:w-[30%] md:w-auto">
+          <Icon name={c.icon} class="text-brand-light shrink-0" size={20} />
+          <span class="whitespace-nowrap">{c.label}</span>
         </li>
       ))}
     </ul>

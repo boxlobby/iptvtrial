@@ -2,19 +2,19 @@
 import Icon from './Icon.astro';
 import { devices } from '../data/devices';
 ---
-<section id="devices" class="section bg-subtle/40">
+<section id="devices" class="section bg-subtle/50">
   <div class="container-x">
     <div class="mx-auto max-w-2xl text-center">
       <span class="eyebrow">Works everywhere</span>
-      <h2 class="mt-4 text-3xl md:text-5xl font-bold">Compatible with every major device</h2>
-      <p class="mt-4 text-text-muted">Install our app or use any standard IPTV player — Firestick to Formuler, we’ve got a guide for it.</p>
+      <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">Compatible with every major device</h2>
+      <p class="mt-4 text-text-muted text-sm sm:text-base">Install our app or use any standard IPTV player — Firestick to Formuler, we’ve got a guide for it.</p>
     </div>
 
-    <ul class="mt-14 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-9 gap-3">
+    <ul class="mt-10 md:mt-14 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-9 gap-2.5 sm:gap-3">
       {devices.map((d) => (
-        <li class="card flex flex-col items-center gap-2 px-3 py-5 text-center hover:border-signal/40 transition">
-          <Icon name={d.icon} class="text-signal" size={28} />
-          <span class="text-xs text-text-muted">{d.label}</span>
+        <li class="card flex flex-col items-center gap-2 px-2 py-4 sm:py-5 text-center hover:border-brand/40 transition">
+          <Icon name={d.icon} class="text-brand-light" size={26} />
+          <span class="text-[11px] sm:text-xs text-text-muted">{d.label}</span>
         </li>
       ))}
     </ul>

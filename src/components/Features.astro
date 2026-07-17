@@ -6,20 +6,24 @@ import { features } from '../data/features';
   <div class="container-x">
     <div class="mx-auto max-w-2xl text-center">
       <span class="eyebrow">Why choose us</span>
-      <h2 class="mt-4 text-3xl md:text-5xl font-bold">Built for the UK, priced for everyone</h2>
-      <p class="mt-4 text-text-muted">The cheapest UK IPTV trial that doesn’t cut corners — same lineup, same servers, same 4K quality as our long-term plans.</p>
+      <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold">Built for the UK, priced for everyone</h2>
+      <p class="mt-4 text-text-muted text-sm sm:text-base">The cheapest UK IPTV trial that doesn’t cut corners — same lineup, same servers, same 4K quality as our long-term plans.</p>
     </div>
 
-    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <ul class="slider mt-10 md:mt-14 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5" role="list">
       {features.map((f) => (
-        <article class="card p-6 hover:border-signal/40 transition group">
-          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-signal/10 text-signal group-hover:bg-signal group-hover:text-base transition">
+        <li class="card p-5 sm:p-6 hover:border-brand/40 transition group w-[85%] sm:w-[55%] md:w-auto">
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand-light group-hover:bg-brand group-hover:text-white transition">
             <Icon name={f.icon} size={22} />
           </div>
-          <h3 class="text-lg font-semibold text-text-primary">{f.title}</h3>
+          <h3 class="text-base sm:text-lg font-semibold text-text-primary">{f.title}</h3>
           <p class="mt-2 text-sm text-text-muted leading-relaxed">{f.body}</p>
-        </article>
+        </li>
       ))}
-    </div>
+    </ul>
+
+    <p class="mt-2 text-center text-[11px] uppercase tracking-widest text-text-muted md:hidden">
+      Swipe to see more →
+    </p>
   </div>
 </section>
