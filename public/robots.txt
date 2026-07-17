@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404
 
-Sitemap: https://iptvtrial.org/sitemap-index.xml
+Sitemap: https://iptvtrial.org/sitemap.xml

@@ -68,7 +68,7 @@ public/
 
 ## Post-launch SEO checklist
 
-- [ ] Submit `https://iptvtrial.org/sitemap-index.xml` to **Google Search Console** and **Bing Webmaster Tools**.
+- [ ] Submit `https://iptvtrial.org/sitemap.xml` to **Google Search Console** and **Bing Webmaster Tools**.
 - [ ] Verify structured data with Google’s **Rich Results Test** (Product, Offer, FAQPage, Organization).
 - [ ] Run **Lighthouse** (mobile) — target ≥95 Performance, 100 SEO.
 - [ ] Test on real Firestick / Smart TV / iOS to confirm the WhatsApp CTA works.
