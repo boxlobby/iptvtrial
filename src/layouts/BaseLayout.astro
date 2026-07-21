@@ -62,6 +62,15 @@ const {
     <link rel="preconnect" href="https://wa.me" />
 
     {includeSchema && <SchemaOrg />}
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VFPDLRZRJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1VFPDLRZRJ');
+    </script>
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-signal focus:px-3 focus:py-2 focus:text-base">Skip to content</a>
