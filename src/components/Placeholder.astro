@@ -10,6 +10,7 @@ export interface Props {
   eager?: boolean;
   width?: number;
   height?: number;
+  sizes?: string;
 }
 const {
   label = 'Image',
@@ -20,6 +21,7 @@ const {
   eager = false,
   width,
   height,
+  sizes,
 } = Astro.props;
 ---
 {src ? (
@@ -31,6 +33,7 @@ const {
     loading={eager ? 'eager' : 'lazy'}
     decoding={eager ? 'sync' : 'async'}
     fetchpriority={eager ? 'high' : 'auto'}
+    sizes={sizes}
     class={`w-full h-full object-cover ${aspect} ${className}`}
   />
 ) : (

@@ -58,19 +58,19 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="preconnect" href="https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev" />
-    <link rel="preconnect" href="https://wa.me" />
+    <link rel="preconnect" href="https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- Preload LCP hero image so the browser fetches it before parsing body -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev/Men_watching_football_match_202607200445.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
 
     {includeSchema && <SchemaOrg />}
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VFPDLRZRJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-1VFPDLRZRJ');
-    </script>
   </head>
   <body>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-signal focus:px-3 focus:py-2 focus:text-base">Skip to content</a>
@@ -118,10 +118,8 @@ const {
 
     <script is:inline>
       // Shared auto-scroll driver for scrubbable carousels.
-      // Any container with [data-auto-scroll] gets its scrollLeft nudged each frame,
-      // wraps seamlessly at half-width (content must be duplicated in markup),
-      // and pauses while the user is interacting so they can freely scrub.
-      (() => {
+      // Deferred to window load so RAF loops don't compete during initial paint.
+      window.addEventListener('load', () => {
         if (typeof window === 'undefined') return;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduced) return;
@@ -134,22 +132,16 @@ const {
           const direction = el.getAttribute('data-direction') === 'reverse' ? -1 : 1;
           let paused = false;
           let resumeTimer = 0;
-          let visible = true;
+          let visible = false;
+          let rafId = 0;
 
-          // Content is duplicated, so the seamless loop length is scrollWidth / 2.
-          // Any scrollLeft in [0, half) has an identical pixel at scrollLeft + half.
           const halfWidth = () => el.scrollWidth / 2;
 
-          let pos = 0;
-          const seed = () => {
-            pos = direction === -1 ? halfWidth() : 0;
-            el.scrollLeft = pos;
-          };
-          seed();
-          window.addEventListener('load', seed, { once: true });
+          let pos = direction === -1 ? halfWidth() : 0;
+          el.scrollLeft = pos;
 
           const tick = () => {
-            if (!paused && visible) {
+            if (!paused) {
               const half = halfWidth();
               if (half > 0) {
                 pos += speed * direction;
@@ -158,9 +150,11 @@ const {
                 el.scrollLeft = pos;
               }
             }
-            requestAnimationFrame(tick);
+            rafId = requestAnimationFrame(tick);
           };
-          requestAnimationFrame(tick);
+
+          const startRAF = () => { if (!rafId) rafId = requestAnimationFrame(tick); };
+          const stopRAF = () => { if (rafId) { cancelAnimationFrame(rafId); rafId = 0; } };
 
           const pause = () => {
             paused = true;
@@ -169,8 +163,6 @@ const {
           const scheduleResume = () => {
             if (resumeTimer) window.clearTimeout(resumeTimer);
             resumeTimer = window.setTimeout(() => {
-              // Re-sync virtual position from where the user left the scroller,
-              // normalising into [0, half) so the next tick continues smoothly.
               const half = halfWidth();
               if (half > 0) {
                 pos = el.scrollLeft % half;
@@ -194,12 +186,32 @@ const {
 
           if ('IntersectionObserver' in window) {
             const io = new IntersectionObserver((entries) => {
-              entries.forEach((entry) => { visible = entry.isIntersecting; });
+              entries.forEach((entry) => {
+                visible = entry.isIntersecting;
+                if (visible) startRAF(); else stopRAF();
+              });
             }, { threshold: 0 });
             io.observe(el);
+          } else {
+            startRAF();
           }
         });
-      })();
+      }, { once: true });
+    </script>
+
+    <!-- Google Analytics — deferred to avoid blocking FCP/LCP -->
+    <script is:inline>
+      window.addEventListener('load', () => {
+        const s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1VFPDLRZRJ';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-1VFPDLRZRJ');
+      }, { once: true });
     </script>
   </body>
 </html>
