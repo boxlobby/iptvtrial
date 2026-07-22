@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://iptvtrial.org',
@@ -9,5 +8,5 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
-  integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
+  integrations: [tailwind({ applyBaseStyles: false })],
 });
