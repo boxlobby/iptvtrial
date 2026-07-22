@@ -41,6 +41,7 @@ const website = {
   publisher: { '@id': `${site.url}/#organization` },
 };
 
+const today = new Date().toISOString().slice(0, 10);
 const priceValidUntil = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
   .toISOString()
   .slice(0, 10);
@@ -80,10 +81,44 @@ const product = {
     url: site.url,
     priceCurrency: site.currency,
     price: site.price,
+    validFrom: today,
     priceValidUntil,
     availability: 'https://schema.org/InStock',
     itemCondition: 'https://schema.org/NewCondition',
     seller: { '@id': `${site.url}/#organization` },
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: 0,
+        currency: site.currency,
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'GB',
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 0,
+          unitCode: 'MIN',
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 0,
+          unitCode: 'MIN',
+        },
+      },
+    },
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'GB',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      merchantReturnDays: 0,
+    },
   },
   aggregateRating: {
     '@type': 'AggregateRating',
