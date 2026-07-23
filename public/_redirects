@@ -1,7 +1,5 @@
 https://www.iptvtrial.org/*  https://iptvtrial.org/:splat  301!
 
-/img/*  https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev/:splat  200
-
 /about  /about/  301
 /contact  /contact/  301
 /testimonials  /testimonials/  301
