@@ -17,10 +17,12 @@ const {
   title = 'IPTV Trial, 30-Day UK IPTV Subscription for £14.99',
   description = 'Start your IPTV trial for £14.99 — a full 30-day UK IPTV subscription with 50,000+ channels, sports, movies & series in 4K. Instant activation.',
   canonical = Astro.url.href,
-  ogImage = 'https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev/Men_watching_football_match_202607200445.webp',
+  ogImage: rawOgImage = '/img/Men_watching_football_match_202607200445.webp',
   noIndex = false,
   includeSchema = true,
 } = Astro.props;
+
+const ogImage = rawOgImage.startsWith('http') ? rawOgImage : `${site.url}${rawOgImage}`;
 ---
 <!doctype html>
 <html lang="en-GB">
@@ -58,14 +60,13 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="preconnect" href="https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Preload LCP hero image so the browser fetches it before parsing body -->
     <link
       rel="preload"
       as="image"
-      href="https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev/Men_watching_football_match_202607200445.webp"
+      href="/img/Men_watching_football_match_202607200445.webp"
       type="image/webp"
       fetchpriority="high"
     />

@@ -31,7 +31,7 @@ export const showcase = [
     label: ‘Kids',
     title: "Safe kids' zone",
     body: ‘A dedicated kids profile with a family-friendly guide and PIN-locked exit.',
-    r2: ‘https://pub-a911d0797db04b879a41ba8f0cdf2db6.r2.dev/Children_watching_TV_screen_202607200435.webp',
+    r2: ‘/img/Children_watching_TV_screen_202607200435.webp',
     alt: ‘Children watching a family-friendly kids channel on an IPTV UK trial with PIN-locked parental controls',
   },
   {
