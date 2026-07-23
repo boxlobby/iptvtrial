@@ -113,7 +113,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -152,6 +152,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -263,7 +264,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
 
         <h2>How our £{site.price} trial fits the "safe cheap" definition</h2>
         <p>
-          We designed our <a href="/#pricing">£{site.price} 30-day IPTV trial</a> to hit every single
+          We designed our <a href="/">30-day IPTV trial UK</a> — <a href="/#pricing">£{site.price}</a> — to hit every single
           value signal above and none of the red flags:
         </p>
         <ul>

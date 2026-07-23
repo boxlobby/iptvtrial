@@ -110,7 +110,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -149,6 +149,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -162,7 +163,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
           <span class="mx-2 text-border-subtle">/</span>
           <a href="/blog/" class="hover:text-brand-light">Blog</a>
           <span class="mx-2 text-border-subtle">/</span>
-          <span class="text-text-primary">IPTV Subscription UK Guide</span>
+          <span class="text-text-primary">Best IPTV UK 2026</span>
         </nav>
 
         <div class="mt-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest text-text-muted">
@@ -359,7 +360,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
         <p>
           A great IPTV subscription in the UK is not the one with the biggest channel list on its
           homepage — it is the one that stays fast, accurate and supported at 9 pm on a Saturday night.
-          The only way to find out which is which is to test. A £{site.price} 30-day trial is the
+          The only way to find out which is which is to test. Our <a href="/" class="text-brand-light underline underline-offset-4 decoration-brand/40 hover:decoration-brand-light">UK IPTV trial</a> — £{site.price} for 30 days — is the
           cheapest form of insurance you will ever buy against wasting £100+ on a bad annual plan.
         </p>
         <p>

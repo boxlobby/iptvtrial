@@ -101,7 +101,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -140,6 +140,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -374,7 +375,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
           runs the <em>same</em> servers as their annual customers, hands you real credentials, and
           answers on WhatsApp is worth ten "free 24-hour" links from a Facebook group. If you use the
           checklist above you will know in the first evening whether the service is worth staying with
-          for the next twelve months.
+          for the next twelve months. Our <a href="/" class="text-brand-light underline underline-offset-4 decoration-brand/40 hover:decoration-brand-light">IPTV trial UK</a> is built on exactly that model — 30 days, full server access, no auto-renew.
         </p>
         <p>
           Ready to test it properly? <a href={waLink()} target="_blank" rel="nofollow noopener noreferrer">Message us on WhatsApp</a>

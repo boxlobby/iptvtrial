@@ -11,6 +11,7 @@ export interface Props {
   ogImage?: string;
   noIndex?: boolean;
   includeSchema?: boolean;
+  authorUrl?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   ogImage: rawOgImage = 'https://cdn.ukiptvbox.com/Men_watching_football_match_202607200445.webp',
   noIndex = false,
   includeSchema = true,
+  authorUrl,
 } = Astro.props;
 
 const ogImage = rawOgImage.startsWith('http') ? rawOgImage : `${site.url}${rawOgImage}`;
@@ -37,6 +39,7 @@ const ogImage = rawOgImage.startsWith('http') ? rawOgImage : `${site.url}${rawOg
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    {authorUrl && <link rel="author" href={authorUrl} />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

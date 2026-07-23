@@ -90,7 +90,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -129,6 +129,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -295,7 +296,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
 
         <h2>Where our £{site.price} IPTV trial fits</h2>
         <p>
-          We built our <a href="/#pricing">£{site.price} 30-day IPTV UK trial</a> to give you the safest
+          We built our <a href="/">UK IPTV trial</a> — <a href="/#pricing">£{site.price} for 30 days</a> — to give you the safest
           possible entry point: real credentials, real servers, real support, and a documented refund
           policy — so you can test the service properly, verify it works on your device, and only
           upgrade to a longer plan once you are confident. That is the definition of a "safe first

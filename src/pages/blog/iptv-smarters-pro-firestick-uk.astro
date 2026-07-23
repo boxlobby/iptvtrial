@@ -137,7 +137,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -180,6 +180,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -236,7 +237,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
           The Fire TV Stick and IPTV Smarters Pro are the most popular IPTV combination in the UK for
           one very simple reason: it is under £70 of hardware, the app is free, and the whole thing
           takes about ten minutes to install. This guide walks you through every screen with no
-          skipped steps and no assumed knowledge.
+          skipped steps and no assumed knowledge. Once you are set up, test the full experience with our <a href="/" class="text-brand-light underline underline-offset-4 decoration-brand/40 hover:decoration-brand-light">UK IPTV trial</a> — 30 days for £{site.price} so you know the service before committing to a year.
         </p>
 
         <h2>Before you start — what you need</h2>

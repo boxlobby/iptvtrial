@@ -195,7 +195,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: site.name,
         url: site.url,
-        logo: { '@type': 'ImageObject', url: `${site.url}/og-image.svg` },
+        logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
       },
       datePublished: post.published,
       dateModified: post.updated,
@@ -246,6 +246,7 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
   canonical={canonical}
   ogImage={ogImage}
   includeSchema={false}
+  authorUrl="/about#team"
 >
   <Header />
   <main id="main">
@@ -535,8 +536,8 @@ const updatedFmt = new Date(post.updated).toLocaleDateString('en-GB', {
         <p>
           The single best piece of advice we give buyers is this: <strong>test the service first, buy
           the box second</strong>. Any of the boxes above can cost £70 to £250, but you can prove that
-          our channel line-up, 4K picture and EPG are what you want for £{site.price} with a
-          <a href="/#pricing">30-day IPTV UK trial</a>. Install IPTV Smarters on a phone, a laptop or the
+          our channel line-up, 4K picture and EPG are what you want for £{site.price} on our
+          <a href="/" class="text-brand-light underline underline-offset-4 decoration-brand/40 hover:decoration-brand-light">30-day IPTV trial UK</a>. Install IPTV Smarters on a phone, a laptop or the
           Fire Stick you already own — if you are happy after a few days, then invest in a dedicated
           Formuler or BuzzTV. It is the cheapest way to protect yourself from buying the wrong hardware.
         </p>
