@@ -17,7 +17,7 @@ const {
   title = 'IPTV Trial, 30-Day UK IPTV Subscription for £14.99',
   description = 'Start your IPTV trial for £14.99 — a full 30-day UK IPTV subscription with 50,000+ channels, sports, movies & series in 4K. Instant activation.',
   canonical = Astro.url.href,
-  ogImage: rawOgImage = 'https://cdn.iptvtrial.org/Men_watching_football_match_202607200445.webp',
+  ogImage: rawOgImage = 'https://cdn.ukiptvbox.com/Men_watching_football_match_202607200445.webp',
   noIndex = false,
   includeSchema = true,
 } = Astro.props;
@@ -60,14 +60,14 @@ const ogImage = rawOgImage.startsWith('http') ? rawOgImage : `${site.url}${rawOg
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="preconnect" href="https://cdn.iptvtrial.org" crossorigin />
+    <link rel="preconnect" href="https://cdn.ukiptvbox.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Preload LCP hero image so the browser fetches it before parsing body -->
     <link
       rel="preload"
       as="image"
-      href="https://cdn.iptvtrial.org/Men_watching_football_match_202607200445.webp"
+      href="https://cdn.ukiptvbox.com/Men_watching_football_match_202607200445.webp"
       type="image/webp"
       fetchpriority="high"
     />

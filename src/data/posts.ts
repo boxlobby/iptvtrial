@@ -19,7 +19,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'The honest guide to an IPTV free trial UK: what to test, red flags to avoid, and why a genuine 30-day IPTV trial beats a "free" 24-hour link every time.',
     category: 'Trial Guide',
-    image: 'https://cdn.iptvtrial.org/IPTV_Free_Trial_UK_stopwatch_202607201536.webp',
+    image: 'https://cdn.ukiptvbox.com/IPTV_Free_Trial_UK_stopwatch_202607201536.webp',
     imageAlt: 'IPTV Free Trial UK stopwatch showing what a legit 24 to 72 hour IPTV TRIAL test looks like',
     published: '2026-07-14',
     updated: '2026-07-21',
@@ -43,7 +43,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'A clear, up-to-date guide to IPTV legality in the UK: what is legal, what isn\'t, what Ofcom actually says, and how to pick a provider that keeps you on the right side of the law.',
     category: 'Legal',
-    image: 'https://cdn.iptvtrial.org/IPTV_legal_UK_explainer_202607201513.webp',
+    image: 'https://cdn.ukiptvbox.com/IPTV_legal_UK_explainer_202607201513.webp',
     imageAlt: 'Is IPTV legal in the UK 2026 plain-English explainer for IPTV TRIAL viewers',
     published: '2026-07-07',
     updated: '2026-07-14',
@@ -65,7 +65,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'UK buyer\'s guide to choosing an IPTV subscription in 2026: server uptime, EPG quality, catch-up, trial length, payment safety and what to ask before you pay.',
     category: 'Buying Guide',
-    image: "https://cdn.iptvtrial.org/IPTV_Subscription_UK_Buyer's_Guide_202607201538.webp",
+    image: "https://cdn.ukiptvbox.com/IPTV_Subscription_UK_Buyer's_Guide_202607201538.webp",
     imageAlt: 'IPTV Subscription UK 2026 buyer guide for checking an IPTV TRIAL before you pay',
     published: '2026-06-30',
     updated: '2026-07-14',
@@ -88,7 +88,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'Cheap IPTV UK is littered with £5 lifetime scams. Spot the red flags, find genuine value, and see why a monitored 30-day IPTV trial is the safer choice.',
     category: 'Buying Guide',
-    image: 'https://cdn.iptvtrial.org/Shield_icon_vs_warning_sign_202607201558.webp',
+    image: 'https://cdn.ukiptvbox.com/Shield_icon_vs_warning_sign_202607201558.webp',
     imageAlt: 'Cheap IPTV UK shield and warning sign showing genuine IPTV TRIAL value versus scams in 2026',
     published: '2026-06-23',
     updated: '2026-07-14',
@@ -111,7 +111,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'UK guide to installing IPTV Smarters Pro on Firestick: sideload with Downloader, Xtream Codes / M3U login, EPG setup and fixes for the most common errors.',
     category: 'Setup Guide',
-    image: 'https://cdn.iptvtrial.org/Firestick_IPTV_Smarters_Pro_setu%E2%80%A6_202607201949%20(1).webp',
+    image: 'https://cdn.ukiptvbox.com/Firestick_IPTV_Smarters_Pro_setu%E2%80%A6_202607201949%20(1).webp',
     imageAlt: 'IPTV Smarters Pro on Firestick full UK install and setup guide for IPTV TRIAL viewers in 2026',
     published: '2026-06-16',
     updated: '2026-07-14',
@@ -134,7 +134,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'Best IPTV player apps for UK viewers in 2026, ranked by EPG quality, catch-up and multi-view. Compare Smarters Pro, TiviMate and OTT Navigator side by side.',
     category: 'App Reviews',
-    image: 'https://cdn.iptvtrial.org/IPTV_player_apps_comparison_202607201951%20(1).webp',
+    image: 'https://cdn.ukiptvbox.com/IPTV_player_apps_comparison_202607201951%20(1).webp',
     imageAlt: 'Best IPTV player apps 2026 comparison for IPTV TRIAL viewers including Smarters TiviMate and OTT Navigator',
     published: '2026-06-09',
     updated: '2026-07-14',
@@ -157,7 +157,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'The five best IPTV boxes to buy in the UK for 2026, ranked on 4K playback, app support, EPG quality and value. Covers the Formuler Z11 Pro Max, Nvidia Shield, Fire TV Stick 4K Max and more.',
     category: 'Buying Guide',
-    image: 'https://cdn.iptvtrial.org/IPTV_boxes_ranked_and_tested_202607201510.webp',
+    image: 'https://cdn.ukiptvbox.com/IPTV_boxes_ranked_and_tested_202607201510.webp',
     imageAlt: 'Top 5 IPTV boxes UK 2026 ranked and tested for an IPTV TRIAL setup',
     published: '2026-07-19',
     updated: '2026-07-21',
